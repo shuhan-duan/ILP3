@@ -60,8 +60,8 @@ expr returns [com.paracamplus.ilp1.interfaces.IASTexpression node]
 // fonctions locales
     | defs+=localFunDef ('and' defs+=localFunDef)* 'in' body=expr 
     # Codefinitions   
-// tme7
-	|'constart' '(' vars+=IDENT? (',' vars+=IDENT)* ')'#Constart        
+// costart
+    | 'costart' fun=expr '(' args+=expr? (',' args+=expr)* ')' #Costart
     ;
 
     
